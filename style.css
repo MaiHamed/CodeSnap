@@ -97,7 +97,28 @@ select#themeSelector option:hover {
   background: #6c63ff;
 }
 
-/* Option styling for different themes (preview in dropdown) */
+.preview.screenshot-mode {
+  width: auto !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.preview.screenshot-mode pre {
+  white-space: pre !important;
+  overflow: visible !important;
+  width: fit-content !important;
+  min-width: 100% !important;
+}
+
+.preview.screenshot-mode code {
+  white-space: pre !important;
+  display: inline-block !important;
+  width: fit-content !important;
+  min-width: 100% !important;
+}
+
 select#themeSelector option[value="theme-default"] {
   color: #c678dd;
 }
