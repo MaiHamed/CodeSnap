@@ -22,12 +22,10 @@ body {
   padding: 20px;
 }
 
-
 .container {
   display: flex;
   gap: 20px;
 }
-
 
 textarea {
   width: 50%;
@@ -39,11 +37,92 @@ textarea {
   background: #111;
   color: white;
   font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  resize: vertical;
+}
+
+textarea::placeholder {
+  color: #6c6c8a;
+  opacity: 0.7;
 }
 
 /* =========================
-   PREVIEW
+   THEME SELECTOR STYLING
 ========================= */
+select#themeSelector {
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2a2a40, #1e1e2f);
+  color: white;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239a8cff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+  padding-right: 45px;
+}
+
+select#themeSelector:hover {
+  border-color: #6c63ff;
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #32324e, #252538);
+}
+
+select#themeSelector:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2), 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+select#themeSelector option {
+  background: #1e1e2f;
+  color: white;
+  padding: 12px;
+  font-family: 'Fira Code', monospace;
+  border: none;
+}
+
+select#themeSelector option:hover {
+  background: #6c63ff;
+}
+
+/* Option styling for different themes (preview in dropdown) */
+select#themeSelector option[value="theme-default"] {
+  color: #c678dd;
+}
+
+select#themeSelector option[value="theme-pink"] {
+  color: #ff6ec7;
+}
+
+select#themeSelector option[value="theme-brown"] {
+  color: #d2a679;
+}
+
+select#themeSelector option[value="theme-ocean"] {
+  color: #00bcd4;
+}
+
+select#themeSelector option[value="theme-neon"] {
+  color: #39ff14;
+}
+
+select#themeSelector option[value="theme-sunset"] {
+  color: #ff7b72;
+}
+
+
 .preview {
   width: 50%;
   padding: 20px;
@@ -58,7 +137,6 @@ textarea {
   background: transparent !important;
   padding: 0;
 }
-
 
 .hljs-keyword {
   color: var(--hljs-keyword);
@@ -106,6 +184,10 @@ textarea {
   color: var(--hljs-keyword);
 }
 
+.hljs-variable { color: var(--hljs-text); }
+.hljs-operator { color: var(--hljs-keyword); }
+.hljs-punctuation { color: var(--hljs-text); }
+
 button {
   margin-top: 20px;
   padding: 12px 24px;
@@ -128,7 +210,6 @@ button:hover {
 button:active {
   transform: scale(0.97);
 }
-
 
 .theme-default {
   --bg: #0d1117;
@@ -158,4 +239,70 @@ button:active {
   --hljs-title: #c19a6b;
   --hljs-function: #a67c52;
   --hljs-number: #e0c097;
+}
+
+.theme-ocean {
+  --bg: #0d1117;
+
+  --hljs-keyword: #00bcd4;
+  --hljs-string: #4dd0e1;
+  --hljs-title: #64b5f6;
+  --hljs-function: #4fc3f7;
+  --hljs-number: #81d4fa;
+
+  --hljs-comment: #5c6f7c;
+}
+
+.theme-neon {
+  --bg: #0d1117;
+
+  --hljs-keyword: #39ff14;
+  --hljs-string: #ff073a;
+  --hljs-title: #00e5ff;
+  --hljs-function: #ff00ff;
+  --hljs-number: #ffd300;
+
+  --hljs-comment: #888;
+}
+
+.theme-sunset {
+  --bg: #0d1117;
+
+  --hljs-keyword: #ff7b72;
+  --hljs-string: #ffa657;
+  --hljs-title: #f2cc60;
+  --hljs-function: #ffb86c;
+  --hljs-number: #ff966c;
+
+  --hljs-comment: #a1887f;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e2f;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6c63ff, #9a8cff);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7b74ff, #a89cff);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  textarea, .preview {
+    width: 100%;
+  }
 }
