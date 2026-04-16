@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>CodeSnap</title>
+
   <link rel="stylesheet" href="style.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
@@ -15,10 +16,16 @@
 <div class="container">
   <textarea id="codeInput" placeholder="Paste your code..."></textarea>
 
-  <div class="preview" id="preview">
-    <pre><code id="codeOutput"></code></pre>
+  <div class="preview theme-default" id="preview">
+    <pre><code id="codeOutput" class="hljs"></code></pre>
   </div>
 </div>
+
+<select id="themeSelector">
+  <option value="theme-default">Default</option>
+  <option value="theme-pink">Pink</option>
+  <option value="theme-brown">Brown</option>
+</select>
 
 <button onclick="downloadImage()">Export Image</button>
 

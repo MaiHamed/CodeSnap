@@ -1,15 +1,33 @@
+:root {
+  --bg: #0d1117;
+  --text: #ffffff;
+
+  --hljs-keyword: #c678dd;
+  --hljs-string: #98c379;
+  --hljs-title: #61afef;
+  --hljs-function: #e06c75;
+  --hljs-number: #d19a66;
+
+  --hljs-comment: #7c7c7c;
+  --hljs-attr: #61afef;
+  --hljs-built_in: #e06c75;
+  --hljs-literal: #d19a66;
+}
+
 body {
   background: linear-gradient(135deg, #1e1e2f, #2a2a40);
-  color: white;
+  color: var(--text);
   font-family: 'Fira Code', monospace;
   margin: 0;
   padding: 20px;
 }
 
+
 .container {
   display: flex;
   gap: 20px;
 }
+
 
 textarea {
   width: 50%;
@@ -20,14 +38,72 @@ textarea {
   outline: none;
   background: #111;
   color: white;
+  font-family: 'Fira Code', monospace;
 }
 
+/* =========================
+   PREVIEW
+========================= */
 .preview {
   width: 50%;
-  background: #0d1117;
   padding: 20px;
   border-radius: 16px;
+  background: var(--bg);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  overflow: auto;
+}
+
+/* IMPORTANT: remove HLJS default styling */
+.hljs {
+  background: transparent !important;
+  padding: 0;
+}
+
+
+.hljs-keyword {
+  color: var(--hljs-keyword);
+  font-weight: bold;
+}
+
+.hljs-string {
+  color: var(--hljs-string);
+}
+
+.hljs-title {
+  color: var(--hljs-title);
+}
+
+.hljs-function {
+  color: var(--hljs-function);
+}
+
+.hljs-number {
+  color: var(--hljs-number);
+}
+
+.hljs-comment {
+  color: var(--hljs-comment);
+  font-style: italic;
+}
+
+.hljs-attr {
+  color: var(--hljs-attr);
+}
+
+.hljs-built_in {
+  color: var(--hljs-built_in);
+}
+
+.hljs-literal {
+  color: var(--hljs-literal);
+}
+
+.hljs-type {
+  color: var(--hljs-title);
+}
+
+.hljs-selector-tag {
+  color: var(--hljs-keyword);
 }
 
 button {
@@ -51,22 +127,35 @@ button:hover {
 
 button:active {
   transform: scale(0.97);
-  box-shadow: 0 5px 10px rgba(108, 99, 255, 0.4);
 }
 
-.keyword {
-  color: #c678dd;
-  font-weight: bold;
+
+.theme-default {
+  --bg: #0d1117;
+
+  --hljs-keyword: #c678dd;
+  --hljs-string: #98c379;
+  --hljs-title: #61afef;
+  --hljs-function: #e06c75;
+  --hljs-number: #d19a66;
 }
 
-.string {
-  color: #98c379;
+.theme-pink {
+  --bg: #0d1117;
+
+  --hljs-keyword: #ff6ec7;
+  --hljs-string: #ffb3d9;
+  --hljs-title: #ff85c2;
+  --hljs-function: #ff4da6;
+  --hljs-number: #ff99cc;
 }
 
-.tag {
-  color: #e06c75;
-}
+.theme-brown {
+  --bg: #0d1117;
 
-.property {
-  color: #61afef;
+  --hljs-keyword: #d2a679;
+  --hljs-string: #f5deb3;
+  --hljs-title: #c19a6b;
+  --hljs-function: #a67c52;
+  --hljs-number: #e0c097;
 }
