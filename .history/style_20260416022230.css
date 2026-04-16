@@ -1,0 +1,31 @@
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  color: white;
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+textarea {
+  width: 50%;
+  height: 400px;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: white;
+}
+
+.preview {
+  width: 50%;
+  background: #0d1117;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
