@@ -4,11 +4,9 @@
   <title>CodeSnap</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- highlight.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-  <!-- html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
@@ -18,15 +16,13 @@
   <textarea id="codeInput" placeholder="Paste your code..."></textarea>
 
   <div class="preview" id="preview">
-    <pre><code id="codeOutput" class="language-cpp"></code></pre>
+    <pre><code id="codeOutput"></code></pre>
   </div>
 </div>
 
 <button onclick="downloadImage()">Export Image</button>
 
 <script src="script.js"></script>
-<script src="https://unpkg.com/prettier@3.2.5/standalone.js"></script>
-<script src="https://unpkg.com/prettier@3.2.5/plugins/babel.js"></script>
-<script src="https://unpkg.com/prettier@3.2.5/plugins/html.js"></script>
+
 </body>
 </html>

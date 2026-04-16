@@ -53,3 +53,20 @@ button:active {
   transform: scale(0.97);
   box-shadow: 0 5px 10px rgba(108, 99, 255, 0.4);
 }
+
+.keyword {
+  color: #c678dd;
+  font-weight: bold;
+}
+
+.string {
+  color: #98c379;
+}
+
+.tag {
+  color: #e06c75;
+}
+
+.property {
+  color: #61afef;
+}

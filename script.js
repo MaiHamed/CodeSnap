@@ -1,23 +1,24 @@
 const input = document.getElementById("codeInput");
 const output = document.getElementById("codeOutput");
 
-input.addEventListener("input", formatAndHighlight);
+input.addEventListener("input", () => {
+  const code = input.value;
 
-function formatAndHighlight() {
-  let code = input.value;
+  const result = hljs.highlightAuto(code);
 
-  try {
-    // Format using Prettier (JavaScript example)
-    const formatted = prettier.format(code, {
-      parser: "babel",
-      plugins: prettierPlugins,
-    });
+  output.innerHTML = result.value;
+});
 
-    output.textContent = formatted;
-  } catch (err) {
-    // If formatting fails, just show raw code
-    output.textContent = code;
-  }
+function downloadImage() {
+  const preview = document.getElementById("preview");
 
-  hljs.highlightElement(output);
+  html2canvas(preview, {
+    backgroundColor: null,
+    scale: 2 
+  }).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "codesnap.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
 }
