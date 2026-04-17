@@ -56,12 +56,6 @@ CodeSnap/
 
 ---
 
-## 📸 Preview
-
-*(Add a screenshot here later 👀)*
-
----
-
 ## 💡 Future Improvements
 
 * Add language selector
