@@ -12,24 +12,31 @@
 <body>
 
 <div class="container">
-  <textarea id="codeInput" placeholder="Paste your code..."></textarea>
+
+  <div class="left-panel">
+    <textarea id="codeInput" placeholder="Paste your code..."></textarea>
+
+    <div class="controls">
+      <select id="themeSelector">
+        <option value="theme-default">Default</option>
+        <option value="theme-pink">Pink</option>
+        <option value="theme-brown">Brown</option>
+        <option value="theme-ocean">Ocean</option>
+        <option value="theme-neon">Neon</option>
+        <option value="theme-sunset">Sunset</option>
+      </select>
+
+      <button onclick="downloadImage()">Export Image</button>
+      <button onclick="formatNow()">Format Code</button>
+    </div>
+  </div>
 
   <div class="preview theme-default" id="preview">
     <pre><code id="codeOutput" class="hljs"></code></pre>
   </div>
+
 </div>
 
-<select id="themeSelector">
-    <option value="theme-default">Default</option>
-    <option value="theme-pink">Pink</option>
-    <option value="theme-brown">Brown</option>
-    <option value="theme-ocean">Ocean</option>
-    <option value="theme-neon">Neon</option>
-    <option value="theme-sunset">Sunset</option>
-</select>
-
-<button onclick="downloadImage()">Export Image</button>
-<button onclick="formatNow()">Format Code</button>
 
   
  <script src="https://unpkg.com/prettier@2.8.8/standalone.js"></script>
