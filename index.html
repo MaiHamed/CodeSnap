@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CodeSnap</title>
+  <head>
+    <title>CodeSnap</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-</head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
 
-<body>
+  <body>
 
-<div class="container">
+    <div class="container">
 
-  <div class="left-panel">
-    <textarea id="codeInput" placeholder="Paste your code..."></textarea>
+      <div class="left-panel">
+        <textarea id="codeInput" placeholder="Paste your code..."></textarea>
 
-    <div class="controls">
-      <select id="themeSelector">
-        <option value="theme-default">Default</option>
-        <option value="theme-pink">Pink</option>
-        <option value="theme-brown">Brown</option>
-        <option value="theme-ocean">Ocean</option>
-        <option value="theme-neon">Neon</option>
-        <option value="theme-sunset">Sunset</option>
-      </select>
+        <div class="controls">
+          <select id="themeSelector">
+            <option value="theme-default">Default</option>
+            <option value="theme-pink">Pink</option>
+            <option value="theme-brown">Brown</option>
+            <option value="theme-ocean">Ocean</option>
+            <option value="theme-neon">Neon</option>
+            <option value="theme-sunset">Sunset</option>
+          </select>
 
-      <button onclick="downloadImage()">Export Image</button>
-      <button onclick="formatNow()">Format Code</button>
+          <button onclick="downloadImage()">Export Image</button>
+          <button onclick="formatNow()">Format Code</button>
+        </div>
+      </div>
+
+      <div class="preview theme-default" id="preview">
+        <pre><code id="codeOutput" class="hljs"></code></pre>
+      </div>
+
     </div>
-  </div>
 
-  <div class="preview theme-default" id="preview">
-    <pre><code id="codeOutput" class="hljs"></code></pre>
-  </div>
+    <script src="https://unpkg.com/prettier@2.8.8/standalone.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/parser-babel.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/parser-html.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/parser-postcss.js"></script>
+    <script
+      src="https://unpkg.com/prettier@2.8.8/parser-typescript.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/standalone.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/plugins/estree.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/plugins/babel.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/plugins/html.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/plugins/postcss.js"></script>
+    <script
+      src="https://unpkg.com/prettier@2.8.8/plugins/typescript.js"></script>
 
-</div>
+    <script src="script.js"></script>
 
-
-  
- <script src="https://unpkg.com/prettier@2.8.8/standalone.js"></script>
-  <script src="https://unpkg.com/prettier@2.8.8/parser-babel.js"></script>
-  <script src="https://unpkg.com/prettier@2.8.8/parser-html.js"></script>
-  <script src="https://unpkg.com/prettier@2.8.8/parser-postcss.js"></script>
-  <script src="https://unpkg.com/prettier@2.8.8/parser-typescript.js"></script>
-
-<script src="script.js"></script>
-
-</body>
+  </body>
 </html>
